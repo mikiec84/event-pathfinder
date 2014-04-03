@@ -84,7 +84,7 @@ d[e>>>5]|=128<<24-e%32;d[(e+64>>>9<<4)+14]=h.floor(b/4294967296);d[(e+64>>>9<<4)
         }
 
         var params = params || {};
-            params['dompath'] = dom.join(DELIMITER);
+            params['dompath'] = dom.join(DELIMITER).replace(/([0-9]+)/g,'').replace(/-/g,'');
             params['dom_sk']  = _hash(params['dompath']);
 
         window.setTimeout(function() {
